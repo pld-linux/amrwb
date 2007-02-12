@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	3GPP AMR-WB Floating-point Speech Codec
-Summary(pl):	Zmiennoprzecinkowy kodek mowy 3GPP AMR-WB
+Summary(pl.UTF-8):   Zmiennoprzecinkowy kodek mowy 3GPP AMR-WB
 Name:		amrwb
 Version:	6.0.0
 Release:	1
@@ -32,31 +32,31 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 3GPP AMR-WB Floating-point Speech Codec.
 
-%description -l pl
+%description -l pl.UTF-8
 Zmiennoprzecinkowy kodek mowy 3GPP AMR-WB.
 
 %package devel
 Summary:	Header files for amrwb library
-Summary(pl):	Pliki nag≥Ûwkowe biblioteki amrwb
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe biblioteki amrwb
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for amrwb library.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe biblioteki amrwb.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe biblioteki amrwb.
 
 %package static
 Summary:	Static amrwb library
-Summary(pl):	Statyczna biblioteka amrwb
+Summary(pl.UTF-8):   Statyczna biblioteka amrwb
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static amrwb library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka amrwb.
 
 %prep
