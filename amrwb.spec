@@ -5,21 +5,21 @@
 Summary:	3GPP AMR-WB Floating-point Speech Codec
 Summary(pl.UTF-8):	Zmiennoprzecinkowy kodek mowy 3GPP AMR-WB
 Name:		amrwb
-Version:	6.0.0
+Version:	7.0.0.1
 Release:	1
-# from 26204-600.doc:
+# from 26204-700.doc:
 # Copyright Notification
 # No part may be reproduced except as authorized by written permission.
 # The copyright and the foregoing restriction extend to reproduction in all media.
-# (c) 2004, 3GPP Organizational Partners (ARIB, CCSA, ETSI, T1, TTA, TTC).
+# (c) 2007, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TTA, TTC).
 # All rights reserved.
 License:	restricted
 Group:		Libraries
-Source0:	http://www.3gpp.org/ftp/Specs/latest/Rel-6/26_series/26204-600.zip
-# NoSource0-md5:	e78e35eabe09eea50198f1a27b81eb60
-NoSource:	0
-Patch0:		%{name}-inttypes.patch
-Patch1:		%{name}-acam.patch
+Source0:	http://ftp.penguin.cz/pub/users/utx/amr/%{name}-%{version}.tar.bz2
+# Source0-md5:	f823b5e055e1d85142740e225b86ac91
+Source1:	http://www.3gpp.org/ftp/Specs/archive/26_series/26.204/26204-700.zip
+# NoSource1-md5:	2e5098687d3007a05b7acc8298a5b072
+NoSource:	1
 URL:		http://www.3gpp.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -60,13 +60,9 @@ Static amrwb library.
 Statyczna biblioteka amrwb.
 
 %prep
-%setup -q -c
+%setup -q
 
-unzip -q 26204-600_ANSI-C_source_code.zip
-mv -f c-code/*.[ch] .
-
-%patch0 -p1
-%patch1 -p1
+cp %{SOURCE1} .
 
 %build
 %{__libtoolize}
@@ -92,7 +88,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc 26204-600.doc
+%doc 26204-700.doc readme.txt
+%doc AUTHORS COPYING ChangeLog NEWS README TODO
+%attr(755,root,root) %{_bindir}/amrwb-*
 %attr(755,root,root) %{_libdir}/libamrwb.so.*.*.*
 
 %files devel
