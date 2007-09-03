@@ -5,7 +5,7 @@
 Summary:	3GPP AMR-WB Floating-point Speech Codec
 Summary(pl.UTF-8):	Zmiennoprzecinkowy kodek mowy 3GPP AMR-WB
 Name:		amrwb
-Version:	7.0.0.1
+Version:	7.0.0.2
 Release:	1
 # from 26204-700.doc:
 # Copyright Notification
@@ -16,7 +16,7 @@ Release:	1
 License:	restricted
 Group:		Libraries
 Source0:	http://ftp.penguin.cz/pub/users/utx/amr/%{name}-%{version}.tar.bz2
-# Source0-md5:	f823b5e055e1d85142740e225b86ac91
+# Source0-md5:	ab6d134fdc36aadd45232ce36f8e12ac
 Source1:	http://www.3gpp.org/ftp/Specs/archive/26_series/26.204/26204-700.zip
 # NoSource1-md5:	2e5098687d3007a05b7acc8298a5b072
 NoSource:	1
@@ -66,7 +66,7 @@ cp %{SOURCE1} .
 
 %build
 %{__libtoolize}
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__automake}
 %configure \
