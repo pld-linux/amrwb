@@ -5,20 +5,20 @@
 Summary:	3GPP AMR-WB Floating-point Speech Codec
 Summary(pl.UTF-8):	Zmiennoprzecinkowy kodek mowy 3GPP AMR-WB
 Name:		amrwb
-Version:	7.0.0.4
+Version:	10.0.0.0
 Release:	1
-# from 26204-700.doc:
+# from 26204-a00.doc:
 # Copyright Notification
 # No part may be reproduced except as authorized by written permission.
 # The copyright and the foregoing restriction extend to reproduction in all media.
-# (c) 2007, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TTA, TTC).
+# (c) 2011, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TTA, TTC).
 # All rights reserved.
 License:	restricted
 Group:		Libraries
 Source0:	http://ftp.penguin.cz/pub/users/utx/amr/%{name}-%{version}.tar.bz2
-# Source0-md5:	eeb4590c382c5c789bbdff61c6c516ae
-Source1:	http://www.3gpp.org/ftp/Specs/archive/26_series/26.204/26204-700.zip
-# NoSource1-md5:	2e5098687d3007a05b7acc8298a5b072
+# Source0-md5:	dba4269307cf09e3d76fa3e60b20dc92
+Source1:	http://www.3gpp.org/ftp/Specs/archive/26_series/26.204/26204-a00.zip
+# NoSource1-md5:	d55024c87a151cb9ec79c0e0be6309d1
 NoSource:	1
 URL:		http://www.3gpp.org/
 BuildRequires:	autoconf >= 2.50
@@ -88,7 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc 26204-700.doc readme.txt
+%doc 26204-a00.doc readme.txt
 %doc AUTHORS COPYING ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/amrwb-*
 %attr(755,root,root) %{_libdir}/libamrwb.so.*.*.*
